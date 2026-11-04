@@ -19,5 +19,5 @@ export type Eatery = {
   created_at?: string
 }
 
-export const categories = ['Tất cả', 'Món Việt', 'Lẩu', 'Nướng', 'Hải sản', 'Ăn vặt', 'Món Nhật', 'Món Hàn', 'Cà phê & bánh']
+export const categories = ['Tất cả', 'Cơm chay', 'Món Việt chay', 'Lẩu chay', 'Món nước chay', 'Món Nhật chay', 'Món Hàn chay', 'Ăn vặt chay', 'Cà phê & bánh chay']
 export const oldDistricts = ['Tất cả khu vực', 'Quận 1', 'Quận 3', 'Quận 4', 'Quận 5', 'Quận 6', 'Quận 7', 'Quận 8', 'Quận 10', 'Quận 11', 'Quận 12', 'Bình Thạnh', 'Gò Vấp', 'Phú Nhuận', 'Tân Bình', 'Tân Phú', 'Bình Tân', 'Thủ Đức', 'Bình Chánh', 'Nhà Bè', 'Hóc Môn', 'Củ Chi', 'Cần Giờ']

@@ -1,44 +1,45 @@
 import type { Eatery } from '../types'
 
+// Dữ liệu minh họa món chay; thay bằng địa điểm thực tế của bạn khi sử dụng.
 export const demoEateries: Eatery[] = [
   {
-    id: 'demo-1', name: 'Bếp Nhà Lục Tỉnh', category: 'Món Việt',
-    description: 'Mâm cơm miền Tây đậm vị, không gian ấm cúng và gần gũi.',
-    best_sellers: ['Cá kho tộ', 'Canh chua cá hú', 'Ba rọi cháy cạnh'],
-    price_min: 55000, price_max: 160000, address: '12 Nguyễn Thị Minh Khai',
+    id: 'demo-1', name: 'Bếp Chay An Nhiên', category: 'Cơm chay',
+    description: 'Mâm cơm chay nhà làm với rau củ theo mùa, đậu hũ và nấm tươi.',
+    best_sellers: ['Cơm gạo lứt nấm kho', 'Đậu hũ sốt sả', 'Canh rau củ'],
+    price_min: 45000, price_max: 95000, address: '12 Nguyễn Thị Minh Khai',
     ward: 'Phường Sài Gòn', old_district: 'Quận 1', city: 'TP. Hồ Chí Minh',
-    maps_url: 'https://www.google.com/maps/search/?api=1&query=12+Nguyen+Thi+Minh+Khai+Ho+Chi+Minh',
-    cover_image: 'https://images.unsplash.com/photo-1547592180-85f173990554?w=1000',
-    gallery: [], note: 'Gợi ý trải nghiệm bữa trưa cùng bạn bè.', featured: true, active: true
+    maps_url: 'https://www.google.com/maps/search/?api=1&query=vegetarian+food+Ho+Chi+Minh+City',
+    cover_image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=1000',
+    gallery: [], note: 'Dữ liệu minh họa — hãy thay bằng quán chay bạn yêu thích.', featured: true, active: true
   },
   {
-    id: 'demo-2', name: 'Lẩu Bò Góc Phố', category: 'Lẩu',
-    description: 'Nồi lẩu bò nóng hổi, nước dùng đậm đà, hợp đi nhóm.',
-    best_sellers: ['Lẩu bò thập cẩm', 'Gân bò', 'Đuôi bò hầm'],
-    price_min: 90000, price_max: 220000, address: '58 Nguyễn Thiện Thuật',
+    id: 'demo-2', name: 'Lẩu Nấm Thuần Chay', category: 'Lẩu chay',
+    description: 'Nồi lẩu rau nấm thanh vị, dùng nước hầm rau củ, phù hợp đi cùng bạn bè.',
+    best_sellers: ['Lẩu nấm rau theo mùa', 'Đậu hũ non', 'Bún tươi'],
+    price_min: 85000, price_max: 180000, address: '58 Nguyễn Thiện Thuật',
     ward: 'Phường Bàn Cờ', old_district: 'Quận 3', city: 'TP. Hồ Chí Minh',
-    maps_url: 'https://www.google.com/maps/search/?api=1&query=Nguyen+Thien+Thuat+Ho+Chi+Minh',
-    cover_image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1000',
-    gallery: [], note: 'Nên đi từ 2–4 người.', featured: true, active: true
+    maps_url: 'https://www.google.com/maps/search/?api=1&query=vegetarian+hotpot+Ho+Chi+Minh+City',
+    cover_image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000',
+    gallery: [], note: 'Dữ liệu minh họa — hãy thay bằng quán chay bạn yêu thích.', featured: true, active: true
   },
   {
-    id: 'demo-3', name: 'Mì Nhật Kumo', category: 'Món Nhật',
-    description: 'Quán nhỏ chuyên ramen với nước dùng ninh kỹ.',
-    best_sellers: ['Tonkotsu ramen', 'Gyoza áp chảo', 'Trà lúa mạch'],
-    price_min: 65000, price_max: 145000, address: '101 Võ Văn Tần',
+    id: 'demo-3', name: 'Mì Chay Kumo', category: 'Món nước chay',
+    description: 'Tô mì rau nấm với nước dùng thực vật, thêm đậu hũ và rau xanh.',
+    best_sellers: ['Ramen miso rau nấm', 'Gyoza rau củ', 'Trà lúa mạch'],
+    price_min: 55000, price_max: 115000, address: '101 Võ Văn Tần',
     ward: 'Phường Xuân Hòa', old_district: 'Quận 3', city: 'TP. Hồ Chí Minh',
-    maps_url: 'https://www.google.com/maps/search/?api=1&query=Vo+Van+Tan+Ho+Chi+Minh',
-    cover_image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1000',
-    gallery: [], note: 'Phù hợp cho bữa ăn nhanh, gọn.', featured: false, active: true
+    maps_url: 'https://www.google.com/maps/search/?api=1&query=vegetarian+ramen+Ho+Chi+Minh+City',
+    cover_image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000',
+    gallery: [], note: 'Dữ liệu minh họa — hãy thay bằng quán chay bạn yêu thích.', featured: false, active: true
   },
   {
-    id: 'demo-4', name: 'Hải Sản Bờ Kè', category: 'Hải sản',
-    description: 'Hải sản chế biến tại chỗ, thực đơn phong phú.',
-    best_sellers: ['Tôm nướng muối ớt', 'Sò điệp mỡ hành', 'Mực hấp gừng'],
-    price_min: 120000, price_max: 350000, address: 'Đường Trường Sa',
+    id: 'demo-4', name: 'Bếp Cuốn Xanh', category: 'Món Việt chay',
+    description: 'Món cuốn và gỏi chay tươi mát, nhiều rau thơm và nguyên liệu thực vật.',
+    best_sellers: ['Gỏi cuốn nấm', 'Gỏi ngó sen chay', 'Chả giò rau củ'],
+    price_min: 50000, price_max: 120000, address: 'Đường Trường Sa',
     ward: 'Phường Gia Định', old_district: 'Bình Thạnh', city: 'TP. Hồ Chí Minh',
-    maps_url: 'https://www.google.com/maps/search/?api=1&query=Truong+Sa+Binh+Thanh',
-    cover_image: 'https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=1000',
-    gallery: [], note: 'Nên hỏi giá theo thời điểm trước khi gọi món.', featured: false, active: true
+    maps_url: 'https://www.google.com/maps/search/?api=1&query=vegetarian+restaurant+Ho+Chi+Minh+City',
+    cover_image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000',
+    gallery: [], note: 'Dữ liệu minh họa — hãy thay bằng quán chay bạn yêu thích.', featured: false, active: true
   }
 ]

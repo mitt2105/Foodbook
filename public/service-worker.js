@@ -1,4 +1,4 @@
-const CACHE = 'foodbook-v1';
+const CACHE = 'foodbook-veg-v2';
 const BASE = '/Vegetarian/';
 self.addEventListener('install', event => {
   event.waitUntil((async () => {

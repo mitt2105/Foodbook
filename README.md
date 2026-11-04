@@ -1,6 +1,6 @@
 # FOODBOOK
 
-Ứng dụng web/PWA khám phá và lưu trữ quán ăn. Giao diện Premium + Dynamic, tìm kiếm theo tên quán/món/địa chỉ, lọc theo **quận cũ**, xem hồ sơ quán, yêu thích và chọn quán ngẫu nhiên.
+Ứng dụng web/PWA lưu trữ và khám phá **quán chay, món chay**. Giao diện Premium + Dynamic với hình ảnh và danh mục món chay, tìm kiếm theo tên quán/món/địa chỉ, lọc theo **quận cũ**, xem hồ sơ quán, yêu thích và chọn quán chay ngẫu nhiên.
 
 ## Chạy thử trên máy
 
@@ -58,6 +58,8 @@ Không tự động suy ra quận cũ từ phường mới; người quản tr�
 
 ## Phạm vi bản khởi tạo
 
-Đã có: giao diện responsive, danh sách quán, tìm kiếm, lọc danh mục/quận cũ, hồ sơ chi tiết, yêu thích trong phiên, chọn quán ngẫu nhiên, quản trị CRUD, đăng nhập Supabase, tải ảnh lên Supabase Storage và PWA cơ bản.
+FOODBOOK chỉ hiển thị các danh mục món chay; form quản trị yêu cầu xác nhận địa điểm và món lưu là món chay, còn Supabase giới hạn giá trị danh mục bằng ràng buộc cơ sở dữ liệu. Dữ liệu mẫu hiện đều là món chay và được ghi rõ là dữ liệu minh họa.
+
+Đã có: giao diện responsive, danh sách quán chay, tìm kiếm, lọc danh mục/quận cũ, hồ sơ chi tiết, yêu thích trong phiên, chọn quán chay ngẫu nhiên, quản trị CRUD, đăng nhập Supabase, tải ảnh lên Supabase Storage và PWA cơ bản.
 
 Cần cấu hình tiếp: tạo project Supabase và tài khoản admin, bật GitHub Pages bằng Actions, thêm secrets Supabase trong GitHub, rồi xác minh deploy thực tế. Bản đồ hiện mở liên kết ngoài Google Maps.

@@ -4,7 +4,8 @@ create extension if not exists pgcrypto;
 create table if not exists public.eateries (
   id uuid primary key default gen_random_uuid(),
   name text not null,
-  category text not null default 'Cơm chay',
+  category text not null default 'Món Việt',
+  has_vegetarian_options boolean not null default false,
   description text not null default '',
   best_sellers text[] not null default '{}',
   price_min integer not null default 0 check (price_min >= 0),
@@ -23,23 +24,27 @@ create table if not exists public.eateries (
   updated_at timestamptz not null default now()
 );
 
--- Keep the stored collection scoped to vegetarian categories. NOT VALID keeps
--- existing rows untouched while enforcing the rule for new or changed rows.
-do $$
-begin
-  if not exists (
-    select 1 from pg_constraint
-    where conname = 'eateries_vegetarian_category_check'
-      and conrelid = 'public.eateries'::regclass
-  ) then
-    alter table public.eateries
-      add constraint eateries_vegetarian_category_check
-      check (category in (
-        'Cơm chay', 'Món Việt chay', 'Lẩu chay', 'Món nước chay',
-        'Món Nhật chay', 'Món Hàn chay', 'Ăn vặt chay', 'Cà phê & bánh chay'
-      )) not valid;
-  end if;
-end $$;
+-- Migration from the vegetarian-only V1 category list.
+alter table public.eateries
+  add column if not exists has_vegetarian_options boolean not null default false;
+alter table public.eateries
+  drop constraint if exists eateries_vegetarian_category_check;
+update public.eateries
+set has_vegetarian_options = true
+where category in ('Cơm chay', 'Món Việt chay', 'Lẩu chay', 'Món nước chay', 'Món Nhật chay', 'Món Hàn chay', 'Ăn vặt chay', 'Cà phê & bánh chay');
+update public.eateries
+set category = case category
+  when 'Cơm chay' then 'Cơm'
+  when 'Món Việt chay' then 'Món Việt'
+  when 'Lẩu chay' then 'Lẩu'
+  when 'Món nước chay' then 'Phở & bún'
+  when 'Món Nhật chay' then 'Món Nhật'
+  when 'Món Hàn chay' then 'Món Hàn'
+  when 'Ăn vặt chay' then 'Ăn vặt'
+  when 'Cà phê & bánh chay' then 'Cà phê & bánh'
+  else category
+end
+where category in ('Cơm chay', 'Món Việt chay', 'Lẩu chay', 'Món nước chay', 'Món Nhật chay', 'Món Hàn chay', 'Ăn vặt chay', 'Cà phê & bánh chay');
 
 create index if not exists eateries_old_district_idx on public.eateries(old_district);
 create index if not exists eateries_category_idx on public.eateries(category);
